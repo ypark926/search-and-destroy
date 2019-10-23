@@ -3,13 +3,13 @@
 //Complete this algo
 const isLoop = linkedlist => {
   let currentNode = linkedlist.head;
-  let ourHashTable = {};
+  let ourSet = new Set();
 
   while (currentNode.next) {
-    if (ourHashTable[currentNode.value]) {
+    if (ourSet.has(currentNode)) {
       return true;
     }
-    ourHashTable[currentNode.value] = true;
+    ourSet.add(currentNode)
     currentNode = currentNode.next;
   }
 
